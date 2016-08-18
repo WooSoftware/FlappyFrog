@@ -4,11 +4,11 @@ var TEXT_LOADING = 'Loading...\n\n历史的行程: %s %';
 var TEXT_SCORE = '+ %s s';
 var TEXT_GAME_OVER = '我为长者续命%s秒\n志己的生命减少%s秒\n而且这个效率efficiency: %s%';
 var TEXT_TRY_AGAIN = '重新续';
-var TEXT_PLAY_BGM = '请州长夫人演唱';
+var TEXT_PLAY_BGM = '播放Exciting的BGM';
 var TEXT_TIME_ELAPSED = '- %s s';
 var TEXT_TOTAL_TIME_ELAPSED = '累计被续 %s 秒';
-var TEXT_TINY_TIPS = '[微小的提示]\n为了获得坠好的游戏体验，请：\n打开音量\n穿上红色的衣服';
-var TEXT_FONT = '"Segoe UI", "Microsoft YaHei", 宋体, sans-serif'; // 插入宋体
+var TEXT_TINY_TIPS = 'FlappyFrog 1.0 二院续命专用\n[微小的提示]\n为了获得坠好的游戏体验，请：\n打开音量\n穿上红色的衣服';
+var TEXT_FONT = '"Helvetica","Segoe UI", "Microsoft YaHei", 宋体, sans-serif'; // 插入宋体
 
 var _gravity = 40,
   _speed = 390,
@@ -44,7 +44,7 @@ var _ground;
 var _clouds,
   _cloudsTimer;
 
-var _gameOver = false,
+var _gameOver = true,
   _gameStarted = false;
 
 var _score = 0;
@@ -411,6 +411,17 @@ function showGameOver() {
 
   var a = Math.floor(_score / _timeElapsed * 100);
   a = TEXT_GAME_OVER.replace('%s', _score).replace('%s', _timeElapsed).replace('%s', a);
+  if (_score<5){
+	  a += '\n不行嘛，你还得靴习一个';
+  } else if (_score>5 & _score<20){
+	  a += '\n姿势水平还要提高！';
+  } else if (_score>20 & _score<40){
+	  a += '\n长者比你不知道高到哪里去了！';
+  } else if (_score>40 & _score<80){
+	  a += '\n闷声发大财，这是坠吼得！';
+  } else if (_score>100){
+	  a += '\n续的比香港记者还快！';
+  }
   _gameOverText.setText(a);
   _gameOverText.renderable = true;
   _tryAgainText.renderable = true;
@@ -603,7 +614,7 @@ function reset() {
 
 function create() {
   _game.stage.scaleMode = Phaser.StageScaleMode.SHOW_ALL;
-  _game.stage.scale.setScreenSize(true);
+  _game.stage.scale.setScreenSize(false);
 
   initBackground();
   initPipes();
