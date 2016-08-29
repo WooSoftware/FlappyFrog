@@ -7,7 +7,7 @@ var TEXT_TRY_AGAIN = '重新续';
 var TEXT_PLAY_BGM = '播放Exciting的BGM';
 var TEXT_TIME_ELAPSED = '- %s s';
 var TEXT_TOTAL_TIME_ELAPSED = '累计被续 %s 秒';
-var TEXT_TINY_TIPS = 'FlappyFrog 1.1 二院续命专用\n1.1更新内容:\n1.增加续命结束后提示语\n2.使用CloudFlare CDN加速\n[微小的提示]\n为了获得坠好的游戏体验，请：\n打开音量\n穿上红色的衣服';
+var TEXT_TINY_TIPS = 'FlappyFrog 1.2 二院续命专用\n1.2更新内容:\n修复了20,40,60,80,100时无评语问题。\n\n[微小的提示]\n为了获得坠好的游戏体验，请：\n打开音量\n穿上红色的衣服';
 var TEXT_FONT = '"Helvetica","Segoe UI", "Microsoft YaHei", 宋体, sans-serif'; // 插入宋体
 
 var _gravity = 40,
