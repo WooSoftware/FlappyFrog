@@ -413,13 +413,15 @@ function showGameOver() {
   a = TEXT_GAME_OVER.replace('%s', _score).replace('%s', _timeElapsed).replace('%s', a);
   if (_score<5){
 	  a += '\n不行嘛，你还得靴习一个';
-  } else if (_score>5 & _score<20){
+  } else if (_score>=5 & _score<20){
 	  a += '\n姿势水平还要提高！';
-  } else if (_score>20 & _score<40){
+  } else if (_score>=20 & _score<40){
 	  a += '\n长者比你不知道高到哪里去了！';
-  } else if (_score>40 & _score<80){
+  } else if (_score>=40 & _score<80){
 	  a += '\n闷声发大财，这是坠吼得！';
-  } else if (_score>100){
+  } else if (_score>=80 & _score<100){
+	  a += '\n很惭愧，只做了一些微小的工作！';
+  } else if (_score>=100){
 	  a += '\n续的比香港记者还快！';
   }
   _gameOverText.setText(a);
